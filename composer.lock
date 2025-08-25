@@ -4986,7 +4986,7 @@
             "notification-url": "https://packages.drupal.org/8/downloads",
             "scripts": {
                 "phpcs": [
-                    "phpcs -s --runtime-set ignore_warnings_on_exit 1 --runtime-set ignore_errors_on_exit 0 'web/modules/custom'"
+                    "phpcs -s --runtime-set ignore_warnings_on_exit 1 --runtime-set ignore_errors_on_exit 0 'modules/custom'"
                 ]
             },
             "license": [
