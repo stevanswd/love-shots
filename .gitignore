@@ -8,6 +8,12 @@
 # Ignore configuration files that may contain sensitive information
 /sites/*/*settings*.php
 /sites/*/*services*.yml
+/sites/default/*.services.yml
+/sites/default/*.settings.php
+/sites/default/settings.php
+
+# Ignore the additional .gitignore added by Drupal scaffolding.
+/sites/default/.gitignore
 
 # Ignore paths that may contain user-generated content
 /sites/*/private
@@ -41,3 +47,28 @@
 
 # Ignore .ddev directory
 .ddev/
+
+
+# IDE artifacts
+*~
+\#*\#
+*.swp
+.DS*
+._.DS*
+.project
+.idea
+.vscode
+.history
+.tags
+
+# Upstream dependencies.
+vendor
+node_modules
+.bundle
+
+# Build output
+/modules/contrib
+/themes/contrib
+
+# Site Content
+/sites/*/files
