@@ -1,5 +1,5 @@
-uuid: f0c646b0-aeb6-41a4-939a-c2c83f6d85df
-langcode: en
+uuid: 6554125c-92e5-4d99-a8ff-7d782ec6bee0
+langcode: es
 status: true
 dependencies:
   config:
@@ -13,7 +13,7 @@ dependencies:
 _core:
   default_config_hash: 6WavjUYXIegP9AAg2zXGx54MWIVoomC3SZhNiqe-Dyk
 id: anonymous
-label: 'Anonymous user'
+label: 'Usuario anónimo'
 weight: 0
 is_admin: false
 permissions:

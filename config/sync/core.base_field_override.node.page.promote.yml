@@ -1,5 +1,5 @@
-uuid: 32deff09-296d-40a0-bc45-31b4069db01d
-langcode: en
+uuid: 50d79cc1-ba15-4b78-8dad-782b097822c9
+langcode: es
 status: true
 dependencies:
   config:
@@ -10,7 +10,7 @@ id: node.page.promote
 field_name: promote
 entity_type: node
 bundle: page
-label: 'Promoted to front page'
+label: 'Promocionado a la página principal'
 description: ''
 required: false
 translatable: false
@@ -19,6 +19,6 @@ default_value:
     value: 0
 default_value_callback: ''
 settings:
-  on_label: 'On'
-  off_label: 'Off'
+  on_label: Activado
+  off_label: Desactivado
 field_type: boolean

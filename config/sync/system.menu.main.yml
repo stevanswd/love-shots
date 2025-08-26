@@ -1,10 +1,10 @@
-uuid: 2785ad62-0ad5-48fa-bd12-324475142310
-langcode: en
+uuid: 2dd1682d-d47a-48ff-8a52-08d18597f380
+langcode: es
 status: true
 dependencies: {  }
 _core:
   default_config_hash: Q2Ra3jfoIVk0f3SjxJX61byRQFVBAbpzYDQOiY-kno8
 id: main
-label: 'Main navigation'
-description: 'Site section links'
+label: 'Navegación principal'
+description: 'Enlaces de secciones del sitio'
 locked: true
