@@ -1,9 +1,0 @@
-uuid: db6415b1-619f-4b50-b41f-d572fa82c1eb
-langcode: es
-status: true
-dependencies: {  }
-id: es
-label: Español
-direction: ltr
-weight: 0
-locked: false

@@ -69,6 +69,7 @@ node_modules
 # Build output
 /modules/contrib
 /themes/contrib
+/config/sync
 
 # Site Content
 /sites/*/files
