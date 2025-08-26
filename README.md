@@ -7,7 +7,7 @@ the [Drupal community][Drupal community].
 
 ## Contributing
 
-Drupal is developed on [Drupal.org][Drupal.org], the home of the international
+Drupal is developed on [Drupal.org](Drupal.org), the home of the international
 Drupal community since 2001!
 
 [Drupal.org][Drupal.org] hosts Drupal's [GitLab repository][GitLab repository],
@@ -30,46 +30,43 @@ You can quickly extend Drupal's core feature set by installing any of its
 module ecosystem, you can often build most or all of what your project needs
 before writing a single line of code.
 
-## Changelog
+## Running the Project with DDEV
 
-Drupal keeps detailed [change records][changelog]. You can search Drupal's
-changes for a record of every notable breaking change and new feature since
-2011.
+This project uses [DDEV](https://ddev.readthedocs.io/) to provide a local
+development environment for Drupal.
 
-## Security
+### Prerequisites
 
-For a list of security announcements, see the [Security advisories
-page][Security advisories] (available as [an RSS feed][security RSS]). This
-page also describes how to subscribe to these announcements via email.
+- [Docker Desktop](https://www.docker.com/products/docker-desktop) installed and running
+- [DDEV](https://ddev.readthedocs.io/en/stable/#installation) installed on your system
 
-For information about the Drupal security process, or to find out how to report
-a potential security issue to the Drupal security team, see the [Security team
-page][security team].
+### Initialize the project
 
-## Need a helping hand?
+Clone the repository and move into the project folder:
 
-Visit the [Support page][support] or browse [over a thousand Drupal
-providers][service providers] offering design, strategy, development, and
-hosting services.
+```bash
+git clone <your-repository-url>
+cd <your-project-folder>
+```
 
-## Legal matters
+### Configure DDEV
 
-Know your rights when using Drupal by reading Drupal core's
-[license](/core/LICENSE.txt).
+```bash
+ddev config --project-type=drupal9 --docroot=. --create-docroot
+```
 
-Learn about the [Drupal trademark and logo policy here][trademark].
+### Start the environment
 
-[Drupal.org]: https://www.drupal.org
-[Drupal community]: https://www.drupal.org/community
-[GitLab repository]: https://git.drupalcode.org/project/drupal
-[issue queue]: https://www.drupal.org/project/issues/drupal
-[issue forks]: https://www.drupal.org/drupalorg/docs/gitlab-integration/issue-forks-merge-requests
-[documentation]: https://www.drupal.org/documentation
-[changelog]: https://www.drupal.org/list-changes/drupal
-[modules]: https://www.drupal.org/project/project_module
-[security advisories]: https://www.drupal.org/security
-[security RSS]: https://www.drupal.org/security/rss.xml
-[security team]: https://www.drupal.org/drupal-security-team
-[service providers]: https://www.drupal.org/drupal-services
-[support]: https://www.drupal.org/support
-[trademark]: https://www.drupal.com/trademark
+```bash
+ddev start
+```
+
+### Install Drupal
+
+```bash
+ddev drush site-install
+```
+
+### Access the project
+
+Open your browser and navigate to `http://<your-project-folder>.ddev.site` to access your Drupal site.
