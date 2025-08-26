@@ -1,10 +1,10 @@
+<img alt="Love Shots Logo" src="https://loveshots.space/logo-love-shots.png" height="100px">
+
 # Love Shots
 
 It's a Drupal 11 project that allows your wedding guests to upload photos so you can create a love album.
 
 ## About Drupal
-
-<img alt="Drupal Logo" src="https://www.drupal.org/files/Wordmark_blue_RGB.png" height="60px">
 
 Drupal is an open source content management platform supporting a variety of
 websites ranging from personal weblogs to large community-driven websites. For
@@ -24,13 +24,13 @@ guides, API references, and more by visiting Drupal's [documentation](https://ww
 
 ## Running the Project with DDEV
 
-This project uses [DDEV](https://ddev.readthedocs.io/) to provide a local
+This project uses [DDEV](https://ddev.com/) to provide a local
 development environment for Drupal.
 
 ### Prerequisites
 
-- [Docker Desktop](https://www.docker.com/products/docker-desktop) installed and running
-- [DDEV](https://ddev.readthedocs.io/en/stable/#installation) installed on your system
+- [OrbStack](https://orbstack.dev/) or [Docker Desktop](https://www.docker.com/products/docker-desktop) installed and running
+- [DDEV](https://docs.ddev.com/en/stable/#installation) installed on your system
 
 ### Initialize the project
 
@@ -44,7 +44,7 @@ cd <your-project-folder>
 ### Configure DDEV
 
 ```bash
-ddev config --project-type=drupal9 --docroot=. --create-docroot
+ddev config --project-type=drupal11 --docroot=. --create-docroot
 ```
 
 ### Start the environment
@@ -53,10 +53,16 @@ ddev config --project-type=drupal9 --docroot=. --create-docroot
 ddev start
 ```
 
+### Install dependencies
+
+```bash
+ddev composer install
+```
+
 ### Install Drupal
 
 ```bash
-ddev drush site-install
+ddev launch
 ```
 
 ### Access the project
