@@ -17,6 +17,7 @@
     },
     "require": {
         "composer/installers": "^2.3",
+        "drupal/captcha": "^2.0",
         "drupal/core": "@rc",
         "drupal/core-composer-scaffold": "^11.2",
         "drupal/core-project-message": "^11.2",
@@ -36,6 +37,7 @@
         "drupal/drupal_cms_seo_tools": "^1.2",
         "drupal/drupal_cms_starter": "^1.2",
         "drupal/project_browser": "@beta",
+        "drupal/recaptcha": "^3.4",
         "drupal/recipe_installer_kit": "^1-alpha6@alpha",
         "drupal/webform": "@beta"
     },
