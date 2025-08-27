@@ -1,0 +1,7 @@
+custom_submission_form.submit:
+  path: '/custom-submission/submit'
+  defaults:
+    _form: '\Drupal\custom_submission_form\Form\SubmissionForm'
+    _title: 'Submit Media'
+  requirements:
+    _permission: 'access content'

@@ -1,0 +1,10 @@
+name: 'Custom Submission Form'
+type: module
+description: 'Provides a block with a form to upload photos/videos and messages.'
+core_version_requirement: ^11
+package: Custom
+dependencies:
+  - media
+  - field
+  - user
+  - file

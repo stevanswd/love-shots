@@ -1,0 +1,6 @@
+services:
+  custom_submission_form.form:
+    class: Drupal\custom_submission_form\Form\SubmissionForm
+    arguments: ['@entity_type.manager']
+    tags:
+      - { name: form }
