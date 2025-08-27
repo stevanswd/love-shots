@@ -37,6 +37,10 @@ class SubmissionForm extends FormBase {
       '#title' => $this->t('Upload Videos'),
       '#upload_location' => 'public://media',
       '#multiple' => TRUE,
+      '#upload_validators' => [
+        'file_validate_extensions' => ['mp4 mov avi webm'],
+        'file_validate_size' => [200 * 1024 * 1024], // 200 MB
+      ],
     ];
 
     $form['message'] = [
@@ -72,33 +76,11 @@ class SubmissionForm extends FormBase {
         }
       }
     }
-
-    // Validate video files.
-    $video_files = $form_state->getValue('media_video');
-    if (!empty($video_files) && is_array($video_files)) {
-      foreach ($video_files as $fid) {
-        $file = File::load($fid);
-        if ($file) {
-          $ext = pathinfo($file->getFilename(), PATHINFO_EXTENSION);
-          $allowed = ['mp4', 'mov'];
-          if (!in_array(strtolower($ext), $allowed)) {
-            $form_state->setErrorByName('media_video', $this->t('The file extension %ext is not allowed.', ['%ext' => $ext]));
-          }
-          if ($file->getSize() > 20 * 1024 * 1024) {
-            $form_state->setErrorByName('media_video', $this->t('The file %name exceeds the maximum size of 20 MB.', ['%name' => $file->getFilename()]));
-          }
-        }
-      }
-    }
   }
 
   public function submitForm(array &$form, FormStateInterface $form_state) {
-    $name = $form_state->getValue('full_name');
-    $message = $form_state->getValue('message');
-    $image_files = $form_state->getValue('media_image');
-    $video_files = $form_state->getValue('media_video');
     $uid = \Drupal::currentUser()->id();
-
+    $image_files = $form_state->getValue('media_image');
     if (!empty($image_files) && is_array($image_files)) {
       foreach ($image_files as $fid) {
         $file = File::load($fid);
@@ -120,6 +102,7 @@ class SubmissionForm extends FormBase {
       }
     }
 
+    $video_files = $form_state->getValue('media_video');
     if (!empty($video_files) && is_array($video_files)) {
       foreach ($video_files as $fid) {
         $file = File::load($fid);
@@ -132,7 +115,7 @@ class SubmissionForm extends FormBase {
             'name' => $file->getFilename(),
             'uid' => $uid,
             'status' => 0,
-            'field_media_video' => [
+            'field_media_video_file' => [
               'target_id' => $file->id(),
             ],
           ]);
@@ -141,6 +124,8 @@ class SubmissionForm extends FormBase {
       }
     }
 
+    $name = $form_state->getValue('full_name');
+    $message = $form_state->getValue('message');
     $this->messenger()->addMessage($this->t('Your submission has been received. It will be reviewed before publishing.'));
   }
 
