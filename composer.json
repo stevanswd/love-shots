@@ -17,6 +17,7 @@
     },
     "require": {
         "composer/installers": "^2.3",
+        "drupal/admin_toolbar": "^3.6",
         "drupal/captcha": "^2.0",
         "drupal/core": "@rc",
         "drupal/core-composer-scaffold": "^11.2",
@@ -36,9 +37,11 @@
         "drupal/drupal_cms_project": "^1.2",
         "drupal/drupal_cms_seo_tools": "^1.2",
         "drupal/drupal_cms_starter": "^1.2",
+        "drupal/file_entity": "^2.2",
         "drupal/project_browser": "@beta",
         "drupal/recaptcha": "^3.4",
         "drupal/recipe_installer_kit": "^1-alpha6@alpha",
+        "drupal/video": "^3.1",
         "drupal/webform": "@beta"
     },
     "require-dev": {
